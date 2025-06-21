@@ -1,0 +1,327 @@
+/* Add your CSS here */
+
+/* --- HERO SECTION: Make it pop and more stylized --- */
+.hero {
+  background: linear-gradient(120deg, #0071c5 60%, #00a6e0 100%);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px 70px 20px; /* More space for impact */
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 60, 113, 0.18); /* Soft shadow for depth */
+  border-radius: 0 0 32px 32px; /* Rounded bottom corners */
+  overflow: hidden;
+}
+
+/* Add a subtle Intel circuit pattern or abstract effect (optional for beginners) */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/cubes.png');
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Intel logo as text styling */
+.intel-logo-text {
+  display: inline-block;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif; /* Intel-like font */
+  font-weight: 700;
+  font-size: 2.2em;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 2;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin-top: 0;
+}
+
+/* Container for the dot and the word "Intel" together */
+.intel-dot-container {
+  display: inline-block;
+  position: relative;
+}
+
+/* Style for the blue dot above the "I" in "Intel" */
+.intel-i-dot {
+  color: #00a6e0; /* Bright blue for the dot */
+  font-size: 0.55em; /* Make the dot smaller */
+  position: absolute;
+  left: 0.18em; /* Adjust to center above the "I" */
+  top: -0.7em;  /* Adjust to sit above the "I" */
+  font-weight: bold;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Style for the "I" */
+.intel-logo-text .intel-i {
+  position: relative;
+  display: block;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Remove the old image logo style */
+.intel-logo {
+  display: none;
+}
+
+/* Headline styling: bigger, bolder, with a glow */
+.hero-headline {
+  font-size: 2.5em;
+  margin: 18px 0 10px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px rgba(0, 60, 113, 0.18), 0 1px 0 #fff2;
+  position: relative;
+  z-index: 2;
+}
+
+/* Subheading styling: softer, but still clear */
+.hero-subheading {
+  font-size: 1.2em;
+  margin-top: 12px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  color: #eaf6fb;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 8px rgba(0, 60, 113, 0.10);
+}
+
+/* Add a subtle glowing line under the headline */
+.hero-headline::after {
+  content: "";
+  display: block;
+  margin: 18px auto 0 auto;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #fff 0%, #00a6e0 100%);
+  opacity: 0.7;
+}
+
+/* Header section styling */
+header {
+  background-color: #f4f8fb;
+  color: #003c71;
+  text-align: center;
+  padding: 30px 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #0071c5;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Timeline section background */
+.timeline-section {
+  background-color: #eaf1f8;
+  padding: 30px 0;
+}
+
+/* Timeline container uses flexbox for horizontal scroll on large screens */
+.timeline-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  /* The following is for visual clarity, not required for scroll behavior */
+  scrollbar-width: thin;
+  scrollbar-color: #0071c5 #eaf1f8;
+
+  /* --- Smooth horizontal scroll snapping --- */
+  scroll-snap-type: x mandatory; /* Enable horizontal snap */
+}
+
+/* Each timeline card will snap to the start of the container */
+.timeline-card {
+  background-color: #fff;
+  border: 1px solid #b6c9db;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  min-width: 250px;
+  max-width: 250px;
+  flex: 0 0 250px;
+  padding: 16px;
+  text-align: center;
+  color: #003c71;
+
+  /* --- Snap each card to the start --- */
+  scroll-snap-align: start;
+}
+
+/* Make sure all timeline card images, including wind.jpg, fit the card and display properly */
+.timeline-card img {
+  width: 100%;         /* Image fills the card width */
+  height: 140px;       /* Fixed height for all images */
+  object-fit: cover;   /* Crop and center image to fill area */
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Make timeline cards more dynamic and obvious on hover */
+.timeline-card {
+  transition: 
+    transform 0.35s cubic-bezier(.4,2,.6,1), /* More dramatic scaling */
+    box-shadow 0.35s cubic-bezier(.4,2,.6,1), /* More dramatic shadow */
+    opacity 0.3s ease;
+}
+
+/* When you hover over a timeline card, scale it up more and add a much stronger shadow */
+.timeline-card:hover {
+  transform: scale(1.12) rotate(-2deg); /* Larger scale and slight rotation */
+  box-shadow: 0 16px 40px rgba(0, 60, 113, 0.28), 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 10;
+}
+
+.timeline-card h2 {
+  font-size: 1.3em;
+  color: #0071c5;
+  margin-bottom: 5px;
+}
+
+.timeline-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Hide the description and overlay by default */
+.timeline-card p {
+  opacity: 0;                   /* Hide text */
+  transition: opacity 0.3s ease;
+  position: absolute;           /* Position text in overlay */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;                  /* White text for contrast */
+  margin: 0;
+  padding: 0 10px;
+  width: 90%;
+  z-index: 2;
+  text-align: center;
+  font-size: 1em;
+  max-height: none;             /* Remove previous max-height */
+  overflow: visible;
+}
+
+/* Add overlay to the card */
+.timeline-card {
+  position: relative;           /* Needed for overlay positioning */
+  overflow: hidden;             /* Hide anything outside the card */
+}
+
+/* The overlay itself */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #003c71;          /* Intel dark blue */
+  opacity: 0;                   /* Hidden by default */
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Show overlay and description on hover */
+.timeline-card:hover::before {
+  opacity: 0.95;                /* Show overlay */
+}
+
+.timeline-card:hover p {
+  opacity: 1;                   /* Show description text */
+}
+
+/* Keep the card content visible except for the overlay and description */
+.timeline-card *:not(p) {
+  position: relative;
+  z-index: 3;
+}
+
+/* When hovered, hide the other content except the overlay and description */
+.timeline-card:hover *:not(p) {
+  opacity: 0.1;                 /* Fade out other content */
+  transition: opacity 0.3s ease;
+}
+
+/* Timeline instructions */
+.timeline-instructions {
+  text-align: center;
+  color: #0071c5;
+  margin: 15px 0 30px 0;
+  font-size: 1em;
+}
+
+/* 
+  On small screens (700px wide or less), 
+  force the timeline cards to stack vertically and remove all horizontal scrolling.
+*/
+@media (max-width: 700px) {
+  .timeline-container {
+    display: block;           /* Remove flexbox, stack cards as block elements */
+    padding: 0 0 20px 0;
+    overflow-x: hidden;       /* No horizontal scroll */
+    overflow-y: visible;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .timeline-card {
+    display: block;           /* Block elements stack vertically */
+    width: 95vw;              /* Card fills most of the screen */
+    max-width: 95vw;
+    min-width: 0;
+    margin: 20px auto 0 auto; /* Center cards with margin */
+    flex: none;               /* Remove flex properties */
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .hero {
+    padding: 36px 8px 32px 8px;
+    border-radius: 0 0 18px 18px;
+  }
+  .intel-logo {
+    width: 80px;
+    padding: 4px 8px;
+  }
+  .hero-headline {
+    font-size: 1.3em;
+  }
+  .hero-subheading {
+    font-size: 1em;
+    max-width: 98vw;
+  }
+  .hero-headline::after {
+    width: 36px;
+    height: 3px;
+    margin-top: 10px;
+  }
+}
+
+/* On large screens, allow mouse wheel to scroll horizontally */
+@media (min-width: 701px) {
+  .timeline-container {
+    /* No changes needed for layout, but we will add a helper comment for JS */
+  }
+}
