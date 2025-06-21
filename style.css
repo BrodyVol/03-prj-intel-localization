@@ -325,3 +325,47 @@ header p {
     /* No changes needed for layout, but we will add a helper comment for JS */
   }
 }
+
+/* RTL support */
+html[dir="rtl"], body[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] .hero,
+body[dir="rtl"] .hero {
+  text-align: center; /* Always center */
+}
+
+html[dir="rtl"] .hero-subheading,
+body[dir="rtl"] .hero-subheading {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center; /* Always center */
+}
+
+html[dir="rtl"] .timeline-section {
+  direction: rtl;
+}
+
+html[dir="rtl"] .timeline-container {
+  flex-direction: row-reverse;
+  scroll-snap-type: x mandatory;
+}
+
+html[dir="rtl"] .timeline-card {
+  text-align: center; /* Always center */
+}
+
+html[dir="rtl"] .timeline-card p {
+  text-align: center; /* Always center */
+}
+
+@media (max-width: 700px) {
+  html[dir="rtl"] .timeline-container {
+    display: block;
+  }
+  html[dir="rtl"] .timeline-card {
+    margin: 20px auto 0 auto;
+    text-align: center; /* Always center */
+  }
+}
